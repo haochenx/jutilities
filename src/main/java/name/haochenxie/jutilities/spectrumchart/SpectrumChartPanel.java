@@ -66,8 +66,8 @@ public class SpectrumChartPanel extends JPanel implements DnDUtilities.DnDFileSo
                     return Color.BLACK;
                 case COLOR_BLACK_BG:
                 case COLOR_WHITE_BG:
-                    int[] rgb = SpectrumAlgorithms.waveLengthToRGB(line);
-                    return new Color(rgb[0], rgb[1], rgb[2]);
+                    int rgb = SpectrumAlgorithms.wavelengthToRGB(line);
+                    return new Color(rgb);
                 default:
                     throw new IllegalArgumentException();
             }
