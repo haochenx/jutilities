@@ -30,6 +30,10 @@ public class SpectrumChartPanel extends JPanel implements DnDUtilities.DnDFileSo
 
     public static final int SCALE_LABEL_GAP = 10;
 
+    public static final List<Double> SAMPLE_DATA = Arrays.asList(
+            465., 496., 513., 568., 572., 589., 617.
+    );
+
     private int width = 600;
     private int height = 100;
     private int strokeWidth = 1;
@@ -44,7 +48,6 @@ public class SpectrumChartPanel extends JPanel implements DnDUtilities.DnDFileSo
     private String name = "";
 
     private List<Double> data = Collections.emptyList();
-
     public static enum Style {
         COLOR_BLACK_BG(Color.BLACK, Color.WHITE, 0),
         COLOR_WHITE_BG(Color.WHITE, Color.BLACK, 0),
@@ -310,6 +313,7 @@ public class SpectrumChartPanel extends JPanel implements DnDUtilities.DnDFileSo
         txtData.setText(initialData);
 
         frame.pack();
+        frame.setLocationByPlatform(true);
         frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         frame.setVisible(true);
 
@@ -341,13 +345,13 @@ public class SpectrumChartPanel extends JPanel implements DnDUtilities.DnDFileSo
         return Arrays.asList(file);
     }
 
-    public static void main(String[] args) {
-        List<Double> sampleData = Arrays.asList(
-                465., 496., 513., 568., 572., 589., 617.
-                );
+    public static String getSampleDataText() {
+        return "[SAMPLE] " + Joiner.on(", ").join(SAMPLE_DATA) + " // sample data";
+    }
 
+    public static void main(String[] args) {
         SpectrumChartPanel instance = new SpectrumChartPanel();
-        instance.display("[SAMPLE] " + Joiner.on(", ").join(sampleData) + " // sample data");
+        instance.display(getSampleDataText());
     }
 
 }
