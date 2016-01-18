@@ -1,5 +1,6 @@
 package name.haochenxie.jutilities.app;
 
+import name.haochenxie.jutilities.feagencurve.FeagencurveTry;
 import name.haochenxie.jutilities.spectrumchart.SpectrumChartPanel;
 
 import javax.swing.*;
@@ -24,6 +25,11 @@ public class Gui extends JFrame {
         btnSpectrumChart.addActionListener($ ->
                 new SpectrumChartPanel().display(SpectrumChartPanel.getSampleDataText()));
         contentPane.add(btnSpectrumChart);
+
+        JButton btnFeagencurve = new JButton("Feagencurve Prototype");
+        btnFeagencurve.addActionListener($ ->
+                FeagencurveTry.main(new String[0]));
+        contentPane.add(btnFeagencurve);
 
         pack();
     }
