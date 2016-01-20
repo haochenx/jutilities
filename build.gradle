@@ -35,6 +35,8 @@ dependencies {
 
     compile 'com.google.guava:guava:19.0'
 
+    compile 'org.projectlombok:lombok:1.16.6'
+
     compile "org.functionaljava:functionaljava:4.4"
     compile "org.functionaljava:functionaljava-java8:4.4"
     compile "org.functionaljava:functionaljava-quickcheck:4.4"
