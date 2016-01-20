@@ -39,6 +39,8 @@ public class FeagencurveTry extends JPanel {
 
     @Override
     protected void paintComponent(Graphics g0) {
+        super.paintComponent(g0);
+
         double w, h;
         Graphics g = g0.create();
 
