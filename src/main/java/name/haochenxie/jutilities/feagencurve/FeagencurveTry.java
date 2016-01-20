@@ -67,6 +67,8 @@ public class FeagencurveTry extends JPanel {
      * @param data          each point is expected to be in [-1, 1]*[-1,1]
      */
     private void paintCurve(Graphics2D g, double width, double height, List<P2<Double, Double>> data) {
+        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
         if (data.isEmpty()) {
             return;
         }
