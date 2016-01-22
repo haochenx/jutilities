@@ -1,11 +1,13 @@
 package name.haochenxie.jutilities.turing;
 
 import fj.P3;
-import lombok.Data;
+import lombok.*;
 
 import java.util.Set;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 abstract public class StaticMachineBase implements Machine {
 
     private Set<State> states;

@@ -17,7 +17,7 @@ public class Tape {
     @Getter
     private int max = 0;
 
-    protected Tape() {
+    public Tape() {
         this.positive = new ArrayList<>();
         this.negative = new ArrayList<>();
     }
