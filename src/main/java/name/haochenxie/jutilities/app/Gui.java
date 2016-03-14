@@ -1,5 +1,6 @@
 package name.haochenxie.jutilities.app;
 
+import name.haochenxie.jutilities.labelprinter.ui.LabelEditor;
 import name.haochenxie.jutilities.spectrumchart.SpectrumChartPanel;
 
 import javax.swing.*;
@@ -24,6 +25,11 @@ public class Gui extends JFrame {
         btnSpectrumChart.addActionListener($ ->
                 new SpectrumChartPanel().display(SpectrumChartPanel.getSampleDataText()));
         contentPane.add(btnSpectrumChart);
+
+        JButton btnLabelPrinter = new JButton("Label Printer Utility");
+        btnLabelPrinter.addActionListener($ ->
+                new LabelEditor().display());
+        contentPane.add(btnLabelPrinter);
 
         pack();
     }

@@ -55,4 +55,11 @@ public interface LabelPrintable {
         dialog.setVisible(true);
     }
 
+    /**
+     * translate mm to points
+     */
+    public static double translate(double x) {
+        return x * 2.83464567;
+    }
+
 }

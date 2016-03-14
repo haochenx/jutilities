@@ -11,6 +11,8 @@ import java.awt.print.PrinterJob;
 import java.util.*;
 import java.util.List;
 
+import static name.haochenxie.jutilities.labelprinter.LabelPrintable.translate;
+
 public class LabelPrintingQueue {
 
     public static final double CALIX_IDEAL_VALUE = 20.0;
@@ -82,6 +84,9 @@ public class LabelPrintingQueue {
                 Graphics2D g2d = (Graphics2D) graphics;
                 g2d.translate(getCaliDeltaX(), getCaliDeltaY());
 
+                g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
                 List<LabelPrintable> pageLabels =
                         labels.subList(pageIndex * pageLabelCount,
                                 Math.min((pageIndex + 1) * pageLabelCount, labels.size()));
@@ -124,15 +129,8 @@ public class LabelPrintingQueue {
         return Lists.newArrayList(sheetLayout);
     }
 
-    /**
-     * translate mm to points
-     */
-    private static double translate(double x) {
-        return x * 2.83464567;
-    }
-
     private static int translatei(double x) {
-        return (int) (x * 2.83464567);
+        return (int) translate(x);
     }
 
     public boolean print(boolean showPrintDialog) throws PrinterException {

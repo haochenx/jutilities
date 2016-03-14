@@ -5,6 +5,8 @@ import lombok.*;
 import java.awt.geom.Rectangle2D;
 import java.util.Iterator;
 
+import static name.haochenxie.jutilities.labelprinter.LabelPrintable.translate;
+
 @Getter @Setter
 @EqualsAndHashCode
 @ToString
@@ -47,13 +49,6 @@ public class SimpleSheetLayout implements SheetLayout {
             }
         };
 
-    }
-
-    /**
-     * translate mm to points
-     */
-    private static double translate(double x) {
-        return x * 2.83464567;
     }
 
 }
